@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EF621C442E8AB805008C36A7 /* SwiftUIAuthTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF621C432E8AB805008C36A7 /* SwiftUIAuthTutorialApp.swift */; };
+		EF621C462E8AB805008C36A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF621C452E8AB805008C36A7 /* ContentView.swift */; };
+		EF621C5A2E8AC0F8008C36A7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF621C592E8AC0F8008C36A7 /* LoginView.swift */; };
+		EF621C5C2E8AE965008C36A7 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF621C5B2E8AE965008C36A7 /* InputView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		EF621C402E8AB805008C36A7 /* SwiftUIAuthTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAuthTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF621C432E8AB805008C36A7 /* SwiftUIAuthTutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAuthTutorialApp.swift; sourceTree = "<group>"; };
+		EF621C452E8AB805008C36A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF621C592E8AC0F8008C36A7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EF621C5B2E8AE965008C36A7 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +43,10 @@
 		EF621C372E8AB805008C36A7 = {
 			isa = PBXGroup;
 			children = (
+				EF621C532E8AB8AB008C36A7 /* App */,
+				EF621C522E8AB8A4008C36A7 /* Components */,
+				EF621C512E8AB898008C36A7 /* Core */,
+				EF621C502E8AB87D008C36A7 /* Model */,
 				EF621C422E8AB805008C36A7 /* SwiftUIAuthTutorial */,
 				EF621C412E8AB805008C36A7 /* Products */,
 			);
@@ -43,6 +58,62 @@
 				EF621C402E8AB805008C36A7 /* SwiftUIAuthTutorial.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EF621C502E8AB87D008C36A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF621C512E8AB898008C36A7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				EF621C562E8ABB76008C36A7 /* Authentication */,
+				EF621C552E8ABB73008C36A7 /* Profile */,
+				EF621C542E8ABB4F008C36A7 /* Root */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		EF621C522E8AB8A4008C36A7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EF621C5B2E8AE965008C36A7 /* InputView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EF621C532E8AB8AB008C36A7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EF621C432E8AB805008C36A7 /* SwiftUIAuthTutorialApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EF621C542E8ABB4F008C36A7 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				EF621C452E8AB805008C36A7 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		EF621C552E8ABB73008C36A7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		EF621C562E8ABB76008C36A7 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				EF621C592E8AC0F8008C36A7 /* LoginView.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +190,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF621C5A2E8AC0F8008C36A7 /* LoginView.swift in Sources */,
+				EF621C5C2E8AE965008C36A7 /* InputView.swift in Sources */,
+				EF621C462E8AB805008C36A7 /* ContentView.swift in Sources */,
+				EF621C442E8AB805008C36A7 /* SwiftUIAuthTutorialApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
