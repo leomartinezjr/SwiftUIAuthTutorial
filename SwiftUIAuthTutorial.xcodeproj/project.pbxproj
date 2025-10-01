@@ -13,6 +13,8 @@
 		EF621C5C2E8AE965008C36A7 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF621C5B2E8AE965008C36A7 /* InputView.swift */; };
 		EF621C5E2E8C069C008C36A7 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF621C5D2E8C069C008C36A7 /* RegistrationView.swift */; };
 		EF621C602E8C1404008C36A7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF621C5F2E8C1404008C36A7 /* ProfileView.swift */; };
+		EF621C622E8D53DA008C36A7 /* SetingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF621C612E8D53DA008C36A7 /* SetingsRowView.swift */; };
+		EF621C642E8D59FF008C36A7 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF621C632E8D59FF008C36A7 /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		EF621C5B2E8AE965008C36A7 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		EF621C5D2E8C069C008C36A7 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		EF621C5F2E8C1404008C36A7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		EF621C612E8D53DA008C36A7 /* SetingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetingsRowView.swift; sourceTree = "<group>"; };
+		EF621C632E8D59FF008C36A7 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -67,6 +71,7 @@
 		EF621C502E8AB87D008C36A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EF621C632E8D59FF008C36A7 /* Users.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -85,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				EF621C5B2E8AE965008C36A7 /* InputView.swift */,
+				EF621C612E8D53DA008C36A7 /* SetingsRowView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -196,12 +202,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF621C642E8D59FF008C36A7 /* Users.swift in Sources */,
 				EF621C5A2E8AC0F8008C36A7 /* LoginView.swift in Sources */,
 				EF621C5C2E8AE965008C36A7 /* InputView.swift in Sources */,
 				EF621C462E8AB805008C36A7 /* ContentView.swift in Sources */,
 				EF621C442E8AB805008C36A7 /* SwiftUIAuthTutorialApp.swift in Sources */,
 				EF621C602E8C1404008C36A7 /* ProfileView.swift in Sources */,
 				EF621C5E2E8C069C008C36A7 /* RegistrationView.swift in Sources */,
+				EF621C622E8D53DA008C36A7 /* SetingsRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
