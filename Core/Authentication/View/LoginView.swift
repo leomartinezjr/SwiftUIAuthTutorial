@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
+    @EnvironmentObject var viewModel : AuthViewModel
     
     var body: some View {
         NavigationStack{
@@ -37,7 +38,14 @@ struct LoginView: View {
                 
                 //sign botao
                 Button {
-                    print("Loggin para usuario")} label: {
+                    
+                    Task{
+                        try await viewModel.signIn(whithEmail: email, Password: password)
+                    }
+                    
+                    
+                    print("Loggin para usuario")
+                }label:{
                         HStack{
                             Text("Entrar")
                                 .fontWeight(.semibold)

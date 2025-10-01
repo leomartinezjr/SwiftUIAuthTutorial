@@ -13,6 +13,7 @@ struct RegistrationView: View {
     @State var password: String = ""
     @State var confirmPassword: String = ""
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: AuthViewModel
     
     
     var body: some View {
@@ -48,7 +49,15 @@ struct RegistrationView: View {
             .padding(.vertical,0)
             
             Button {
-                print("Usuario cadastrado com sucesso!")} label: {
+                Task {
+                    try await viewModel.createUser(whithEmail: email,
+                                                   Password: password,
+                                                   fullname: nameCompleto)
+                }
+                
+                
+                
+            } label: {
                     HStack{
                         Text("Cadastrar")
                             .fontWeight(.semibold)
