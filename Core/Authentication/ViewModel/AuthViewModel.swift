@@ -8,35 +8,45 @@
 import Foundation
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 
-class AuthViewModel: ObservableObject{
+class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: Users?
     
-    init(){
-        
-    }
+    init() {}
     
-    func signIn(whithEmail email:String, Password password:String) async throws {
+    func signIn(withEmail email: String, password: String) async throws {
         print("Sign in......")
     }
     
-    func createUser(whithEmail email:String, Password password:String, fullname:String) async throws {
-        print("Cretar usaer......")
+    func createUser(withEmail email: String, password: String, fullname: String) async throws {
+        do {
+            let result = try await Auth.auth().createUser(withEmail: email, password: password)
+            self.userSession = result.user
+            
+            let user = Users(id: result.user.uid, fullname: fullname, email: email)
+            let encodedUser = try Firestore.Encoder().encode(user)
+            
+            try await Firestore.firestore()
+                .collection("users")
+                .document(result.user.uid)
+                .setData(encodedUser)
+            
+        } catch {
+            print("DEBUG: Falha ao criar um usuário: \(error.localizedDescription)")
+        }
     }
     
     func signOut() {
-        
+        // lógica de logout
     }
     
-    func deleteAccount(){
-        
-    }
-        
-    func FetchUser() async {
-        
+    func deleteAccount() {
+        // lógica de exclusão
     }
     
-    
-}//fim
-
+    func fetchUser() async {
+        // busca de usuário
+    }
+}

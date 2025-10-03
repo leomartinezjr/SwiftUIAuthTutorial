@@ -50,8 +50,8 @@ struct RegistrationView: View {
             
             Button {
                 Task {
-                    try await viewModel.createUser(whithEmail: email,
-                                                   Password: password,
+                    try await viewModel.createUser(withEmail: email,
+                                                   password: password,
                                                    fullname: nameCompleto)
                 }
                 
