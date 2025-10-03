@@ -18,10 +18,11 @@ class AuthViewModel: ObservableObject{
     }
     
     func signIn(whithEmail email:String, Password password:String) async throws {
+        print("Sign in......")
     }
     
     func createUser(whithEmail email:String, Password password:String, fullname:String) async throws {
-        
+        print("Cretar usaer......")
     }
     
     func signOut() {
