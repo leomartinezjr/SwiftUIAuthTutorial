@@ -17,7 +17,10 @@ class AuthViewModel: ObservableObject {
     
     init() {
         self.userSession = Auth.auth().currentUser // verifica se ha um usuario no banco de dado se tiover carrega as info
-        
+        Task{
+            
+            await fetchUser()
+        }
         
     }
     
@@ -37,6 +40,7 @@ class AuthViewModel: ObservableObject {
                 .collection("users")
                 .document(result.user.uid)
                 .setData(encodedUser) // aqui cria a colecao User no data e cria o user ID e set coloca as info
+            await fetchUser()
             
         } catch {
             print("DEBUG: Falha ao criar um usuário: \(error.localizedDescription)")
@@ -53,6 +57,11 @@ class AuthViewModel: ObservableObject {
     
     func fetchUser() async {
         guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }
+        self.currentUser = try? snapshot.data(as:Users.self)
+        
+        print ("DEBUG: O Usuario é \(self.currentUser)")
         
         
         
