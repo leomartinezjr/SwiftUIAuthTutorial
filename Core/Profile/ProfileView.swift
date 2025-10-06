@@ -51,7 +51,7 @@ struct ProfileView: View {
                 Button{
                     print("Deletar conta")
                 }label: {
-                    SetingsRowView(imageName: "xmark.circle.fill", title: "Sair do Aplicativo", tintColor: Color(.systemRed))
+                    SetingsRowView(imageName: "xmark.circle.fill", title: "Deletar Conta", tintColor: Color(.systemRed))
                 }
                 
                 
