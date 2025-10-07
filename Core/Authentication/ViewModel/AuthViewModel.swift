@@ -10,6 +10,14 @@ import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 
+protocol AuthenticationFormProtocol {
+        var fomrIsValid: Bool { get }
+    
+}
+
+
+
+
 @MainActor
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
@@ -25,7 +33,18 @@ class AuthViewModel: ObservableObject {
     }
     
     func signIn(withEmail email: String, password: String) async throws {
-        print("Sign in......")
+        do {
+            let result = try await Auth.auth().signIn(withEmail: email, password: password)
+            self.userSession = result.user
+            await fetchUser()
+            
+        }catch{
+            print("DEBUG: Falha no Login \(error.localizedDescription)")
+        }
+        
+        
+        
+        
     }
     
     func createUser(withEmail email: String, password: String, fullname: String) async throws {
@@ -48,14 +67,20 @@ class AuthViewModel: ObservableObject {
     }
     
     func signOut() {
-        // lógica de logout
+        do{
+            try Auth.auth().signOut() // Desloga o usuario do backend
+            self.userSession = nil // limpa os dados do usuario e leva para tela de login (na tela de login =nil)
+            self.currentUser = nil // limpa das dado do DATA
+        }catch {
+            print("DEBUG: Falha ao sair do usuário: \(error.localizedDescription)")
+        }
     }
     
     func deleteAccount() {
         // lógica de exclusão
     }
     
-    func fetchUser() async {
+    func fetchUser() async { //existe para pegar a foto ou registro do login
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
         guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }

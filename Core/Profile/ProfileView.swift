@@ -48,7 +48,9 @@ struct ProfileView: View {
                }
                Section("Conta"){
                    Button{
-                       print("sair do app")
+                       viewModel.signOut()
+                       
+                       
                    }label: {
                        SetingsRowView(imageName: "arrow.left.circle.fill", title: "Sair do Aplicativo", tintColor: Color(.systemRed))
                    }
