@@ -30,7 +30,7 @@ Este projeto foi construído com as seguintes tecnologias e conceitos modernos:
 * **`@Published`:** Propriedade wrapper do Combine para notificar as views sobre mudanças de estado.
 * **`Identifiable` e `Codable`:** Protocolos utilizados para modelagem de dados de usuário, facilitando a integração com Firestore.
 
-## 🎯 Por Que Este Projeto é Digno de Destaque?
+## 🎯 Destaques Desse Projeto?
 
 Este projeto demonstra uma compreensão aprofundada das tecnologias mais recentes do ecossistema Apple e da engenharia de software moderna:
 
