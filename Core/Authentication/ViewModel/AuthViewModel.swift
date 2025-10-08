@@ -40,6 +40,7 @@ class AuthViewModel: ObservableObject {
             
         }catch{
             print("DEBUG: Falha no Login \(error.localizedDescription)")
+            throw error
         }
         
         

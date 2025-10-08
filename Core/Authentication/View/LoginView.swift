@@ -11,6 +11,8 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @EnvironmentObject var viewModel : AuthViewModel
+    @State private var showAlert = false
+    @State private var alertMessage = ""
     
     var body: some View {
         NavigationStack{
@@ -40,12 +42,21 @@ struct LoginView: View {
                 Button {
                     
                     Task{
-                        try await viewModel.signIn(withEmail: email, password: password)
+                        do{
+                            try await viewModel.signIn(withEmail: email, password: password)
+                        }catch{
+                            alertMessage = "E-mail ou senha incorretos. Tente novamente."
+                            showAlert = true
+                            print("DEBUG: Falha no login - \(error.localizedDescription)")
+                        }
                     }
                     
                     
+                    
                     print("Loggin para usuario")
-                }label:{
+                }
+                
+                label:{
                         HStack{
                             Text("Entrar")
                                 .fontWeight(.semibold)
@@ -59,6 +70,7 @@ struct LoginView: View {
                     .opacity(fomrIsValid ? 1 : 0.5)
                     .cornerRadius(10)
                     .padding(.top, 30)
+                    
                 
                 
                 
@@ -80,8 +92,18 @@ struct LoginView: View {
                     }
                 }
             }
+          
+        }  .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Erro de Login"),
+                message: Text(alertMessage),
+                dismissButton: .default(Text("OK"))
+            )
         }
+      
     }
+      
+        
 }
 
 //MARK -- AuthenticationFormProtocol
